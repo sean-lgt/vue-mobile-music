@@ -98,7 +98,13 @@ export default {
         console.log('分组后的内容', singerGroupList)
       })
     },
-    selectSinger() {}
+    selectSinger(singer) {
+        // console.log(this.$store.state.singer  == {})
+      this.$router.push({
+        path: `/singer/${singer.id}`
+      })
+      this.$store.commit('setSinger',singer)
+    }
   }
 }
 </script>

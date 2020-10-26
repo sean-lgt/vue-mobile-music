@@ -10,6 +10,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 import './common/stylus/index.styl'
 import pinyin from 'js-pinyin'
 import VueLazyload from 'vue-lazyload'
+import Vuex from 'vuex'
+import store from './store/store'
 import Vconsole from 'vconsole'
 
 // fastclick：处理移动端click事件300毫秒延迟。
@@ -22,7 +24,9 @@ Vue.prototype.$http = axios
 Vue.prototype.$api = api
 const vConsole = new Vconsole()
 Vue.use(vConsole)
+Vue.use(Vuex)
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
